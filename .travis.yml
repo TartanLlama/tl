@@ -5,13 +5,19 @@ sudo: false
 
 addons:
   apt:
+    sources:
+      - llvm-toolchain-3.9
     packages:
       - cmake-data
       - cmake
-      - clang-3.7
+      - clang-3.9
 
 compiler:
   - clang
   - gcc
+
+install:
+    - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
+    - if [ "$CXX" = "clang++" ]; then export CXX="clang++-3.9" CC="clang-3.9"; fi
 
 script: mkdir build && cd build && cmake .. && make && make test
