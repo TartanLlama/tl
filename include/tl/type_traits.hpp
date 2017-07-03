@@ -1,5 +1,8 @@
 // Implementations of some type traits from C++17 and Lib Fundamentals v2 TS
 
+#ifndef TL_TYPE_TRAITS_HPP
+#define TL_TYPE_TRAITS_HPP
+
 #include <utility>
 #include <type_traits>
 
@@ -49,3 +52,5 @@ namespace tl {
     template <template <class...> class Wrapper, class... Ts>
     struct variadic_size<Wrapper<Ts...>> : index_constant<std::size_t, sizeof...(Ts)>;
 }
+
+#endif
