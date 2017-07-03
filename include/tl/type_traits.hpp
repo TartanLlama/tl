@@ -7,6 +7,9 @@ namespace tl {
     template <bool B>
     using bool_constant = std::integral_constant<bool, B>;
 
+    template <bool B>
+    using index_constant = std::integral_constant<std::size_t, B>;
+
     template <class...> struct conjunction : std::true_type { };
     template <class B> struct conjunction<B> : B { };
     template <class B, class... Bs>
@@ -39,4 +42,10 @@ namespace tl {
 
     template <template <class...> class Trait, class... Args>
     using is_detected = typename detail::is_detected<Trait, void, Args...>::type;
+
+    template <class Pack>
+    struct variadic_size;
+
+    template <template <class...> class Wrapper, class... Ts>
+    struct variadic_size<Wrapper<Ts...>> : index_constant<std::size_t, sizeof...(Ts)>;
 }

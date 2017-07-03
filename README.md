@@ -12,3 +12,5 @@ A bunch of small C++ utilities
   - [`std::negation`](http://en.cppreference.com/w/cpp/types/negation)
   - [`std::void_t`](http://en.cppreference.com/w/cpp/types/void_t)
   - [`std::is_detected`](http://en.cppreference.com/w/cpp/experimental/is_detected)
+  - `index_constant`
+  - `variadic_size`
