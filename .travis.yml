@@ -5,11 +5,10 @@ sudo: false
 
 addons:
   apt:
-    sources:
-      - george-edison55-precise-backports
     packages:
       - cmake-data
       - cmake
+      - clang-3.7
 
 compiler:
   - clang
