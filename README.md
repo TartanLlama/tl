@@ -14,3 +14,10 @@ A bunch of small C++ utilities
   - [`std::is_detected`](http://en.cppreference.com/w/cpp/experimental/is_detected)
   - `index_constant`
   - `variadic_size`
+- [`typelist`](https://github.com/TartanLlama/tl/blob/master/include/tl/typelist.hpp): utilities for type lists
+  - `typelist`
+  - `index_typelist`
+  - `cat_typelist`
+  - `vallist` (C++17)
+  - `index_vallist` (C++17)
+  - `cat_vallist` (C++17)
