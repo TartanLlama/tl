@@ -21,3 +21,4 @@ A bunch of small C++ utilities
   - `vallist` (C++17)
   - `index_vallist` (C++17)
   - `cat_vallist` (C++17)
+- `dependent_false`: enables `static_assert(dependent_false<T>::value)` in templates
