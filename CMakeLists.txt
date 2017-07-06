@@ -7,14 +7,13 @@ include_directories (include)
 
 enable_testing()
 
-add_executable (test_integer_sequence test/integer_sequence.cpp)
-add_test (integer_sequence test_integer_sequence)
+function (tl_test name)
+  add_executable (test_${name} test/${name}.cpp)
+  add_test (${name} test_${name})
+endfunction()
 
-add_executable (test_overload test/overload.cpp)
-add_test (overload test_overload)
-
-add_executable (test_dependent_false test/dependent_false.cpp)
-add_test (dependent_false test_dependent_false)
-
-add_executable (test_type_traits test/type_traits.cpp)
-add_test (type_traits test_type_traits)
+tl_test(integer_sequence)
+tl_test(overload)
+tl_test(dependent_false)
+tl_test(type_traits)
+tl_test(make_array)
