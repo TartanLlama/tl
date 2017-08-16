@@ -25,3 +25,8 @@ A bunch of small C++ utilities
  - [`make_array`](https://github.com/TartanLlama/tl/blob/master/include/tl/make_array.hpp): simple implementation of [`std::make_array`](http://en.cppreference.com/w/cpp/experimental/make_array)
  - [`numeric_aliases`](https://github.com/TartanLlama/tl/blob/master/include/tl/numeric_aliases.hpp): Rust-style numeric aliases, e.g. `tl::i8`, `tl::u64`
 - [`apply`](https://github.com/TartanLlama/tl/blob/master/include/tl/numeric_aliases.hpp): Implementation of [`std::apply`](http://en.cppreference.com/w/cpp/utility/apply)
+
+----------
+
+[![CC0][http://i.creativecommons.org/p/zero/1.0/88x31.png]("http://creativecommons.org/publicdomain/zero/1.0/")
+To the extent possible under law, [Simon Brand](https://twitter.com/TartanLlama) has waived all copyright and related or neighboring rights to the tl library. This work is published from: United Kingdom.
