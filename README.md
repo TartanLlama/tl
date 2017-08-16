@@ -24,3 +24,4 @@ A bunch of small C++ utilities
  - [`dependent_false`](https://github.com/TartanLlama/tl/blob/master/include/tl/dependent_false.hpp): enables `static_assert(dependent_false<T>::value)` in templates
  - [`make_array`](https://github.com/TartanLlama/tl/blob/master/include/tl/make_array.hpp): simple implementation of [`std::make_array`](http://en.cppreference.com/w/cpp/experimental/make_array)
  - [`numeric_aliases`](https://github.com/TartanLlama/tl/blob/master/include/tl/numeric_aliases.hpp): Rust-style numeric aliases, e.g. `tl::i8`, `tl::u64`
+- [`apply`](https://github.com/TartanLlama/tl/blob/master/include/tl/numeric_aliases.hpp): Implementation of [`std::apply`](http://en.cppreference.com/w/cpp/utility/apply)
