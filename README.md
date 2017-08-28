@@ -14,6 +14,7 @@ A bunch of small C++ utilities
   - [`std::is_detected`](http://en.cppreference.com/w/cpp/experimental/is_detected)
   - `index_constant`
   - `variadic_size`
+  - C++14-style `type_trait_t` aliases for C++11 type traits
 - [`typelist`](https://github.com/TartanLlama/tl/blob/master/include/tl/typelist.hpp): utilities for type lists
   - `typelist`
   - `index_typelist`
