@@ -26,6 +26,10 @@ A bunch of small C++ utilities
  - [`make_array`](https://github.com/TartanLlama/tl/blob/master/include/tl/make_array.hpp): simple implementation of [`std::make_array`](http://en.cppreference.com/w/cpp/experimental/make_array)
  - [`numeric_aliases`](https://github.com/TartanLlama/tl/blob/master/include/tl/numeric_aliases.hpp): Rust-style numeric aliases, e.g. `tl::i8`, `tl::u64`
 - [`apply`](https://github.com/TartanLlama/tl/blob/master/include/tl/numeric_aliases.hpp): Implementation of [`std::apply`](http://en.cppreference.com/w/cpp/utility/apply)
+- [`decay_copy`](https://github.com/TartanLlama/tl/blob/master/include/tl/decay_copy.hpp): Implementation of [`decay_copy`](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3255.html)
+- [`casts`](https://github.com/TartanLlama/tl/blob/master/include/tl/casts.hpp): some handy casts
+  - `bit_cast` for `memcpy`ing value representations
+  - `underlying_cast` for casting enums to their underlying type
 
 ----------
 

@@ -29,6 +29,15 @@ static_assert(std::is_same<underlying_type_t<test_enum>, char>::value, "wat");
 using func = int(*)(int);
 static_assert(std::is_same<result_of_t<func(int)>, int>::value, "wat");
 
-int main() {
+static_assert(std::is_same<safe_underlying_type_t<test_enum>, char>::value, "wat");
 
+// std::underlying_type would not SFINAE
+template <class T>
+void foo (safe_underlying_type_t<T> t) {}
+
+template <class T>
+void foo (...) {}
+
+int main() {
+    foo<char>();
 }

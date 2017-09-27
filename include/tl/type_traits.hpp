@@ -65,7 +65,6 @@ namespace tl {
     template <template <class...> class Wrapper, class... Ts>
     struct variadic_size<Wrapper<Ts...>> : index_constant<sizeof...(Ts)> {};
 
-    #if _cplusplus == 201103L
     template <class T> using remove_cv_t = typename std::remove_cv<T>::type;
     template <class T> using remove_const_t = typename std::remove_const<T>::type;
     template <class T> using remove_volatile_t = typename std::remove_volatile<T>::type;
@@ -89,6 +88,16 @@ namespace tl {
     template <class... Ts> using common_type_t = typename std::common_type<Ts...>::type;
     template <class T> using underlying_type_t = typename std::underlying_type<T>::type;
     template <class T> using result_of_t = typename std::result_of<T>::type;
-    #endif
+
+    template <typename T, typename=void>
+    struct safe_underlying_type {};
+
+    template <typename T>
+    struct safe_underlying_type<T, enable_if_t<std::is_enum<T>::value>>
+        : std::underlying_type<T> {};
+
+    template <typename T>
+    using safe_underlying_type_t = typename safe_underlying_type<T>::type;
+    
 }
 #endif
