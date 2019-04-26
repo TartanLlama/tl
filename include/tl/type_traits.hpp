@@ -23,8 +23,8 @@ namespace tl {
     template <bool B>
     using bool_constant = std::integral_constant<bool, B>;
 
-    template <bool B>
-    using index_constant = std::integral_constant<std::size_t, B>;
+    template <std::size_t N>
+    using index_constant = std::integral_constant<std::size_t, N>;
 
     template <class...> struct conjunction : std::true_type { };
     template <class B> struct conjunction<B> : B { };
