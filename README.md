@@ -1,6 +1,8 @@
 # tl
 A bunch of small C++ utilities
 
+The documentation is available at [tl.tartanllama.xyz](https://tl.tartanllama.xyz).
+
 [![Linux Build Status](https://travis-ci.org/TartanLlama/tl.png?branch=master)](https://travis-ci.org/TartanLlama/tl)
 
 - [`overload`](https://github.com/TartanLlama/tl/blob/master/include/tl/overload.hpp): a rudimentary implementation of [`std::overload`](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0051r2.pdf)
