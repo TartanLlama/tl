@@ -1,22 +1,43 @@
-cmake_minimum_required (VERSION 3.1)
-project (tl)
+cmake_minimum_required(VERSION 3.8)
 
-set (CMAKE_CXX_STANDARD 14)
+project(tl-misc VERSION 1.0.0 LANGUAGES CXX)
 
-include_directories (include)
+option(TL_ENABLE_TESTS "Enable tests." ON)
 
-enable_testing()
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/tl-cmake" ${CMAKE_MODULE_PATH})
+include(add-tl)
 
-function (tl_test name)
-  add_executable (test_${name} test/${name}.cpp)
-  add_test (${name} test_${name})
-endfunction()
+tl_add_library(misc SOURCES 
+                include/tl/apply.hpp
+                include/tl/casts.hpp
+                include/tl/decay_copy.hpp
+                include/tl/dependent_false.hpp
+                include/tl/integer_sequence.hpp
+                include/tl/make_array.hpp
+                include/tl/numeric_aliases.hpp
+                include/tl/overload.hpp
+                include/tl/tl.hpp
+                include/tl/type_traits.hpp
+                include/tl/typelist.hpp)
 
-tl_test(integer_sequence)
-tl_test(overload)
-tl_test(dependent_false)
-tl_test(type_traits)
-tl_test(make_array)
-tl_test(apply)
-tl_test(decay_copy)
-tl_test(casts)
+if(TL_ENABLE_TESTS)
+  set (CMAKE_CXX_STANDARD 14)
+  
+  include_directories (include)
+  
+  enable_testing()
+  
+  function (tl_test name)
+    add_executable (test_${name} test/${name}.cpp)
+    add_test (${name} test_${name})
+  endfunction()
+  
+  tl_test(integer_sequence)
+  tl_test(overload)
+  tl_test(dependent_false)
+  tl_test(type_traits)
+  tl_test(make_array)
+  tl_test(apply)
+  tl_test(decay_copy)
+  tl_test(casts)
+endif()
