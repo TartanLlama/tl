@@ -11,7 +11,8 @@
 ///
 // An implementation of decay_copy: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3255.html
 ///
-
+#ifndef TL_DECAY_COPY_HPP
+#define TL_DECAY_COPY_HPP
 #include <type_traits>
 #include <utility>
 
@@ -22,4 +23,4 @@ namespace tl {
         return std::forward<T>(t);
     }
 }
-    
+#endif

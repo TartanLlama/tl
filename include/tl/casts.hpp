@@ -11,7 +11,8 @@
 ///
 // Collection of useful casts
 ///
-
+#ifndef TL_CASTS_HPP
+#define TL_CASTS_HPP
 #include <type_traits>
 #include <cstring>
 
@@ -46,3 +47,4 @@ namespace tl {
         return static_cast<detail::safe_underlying_type_t<E>>(e);
     }
 }
+#endif
