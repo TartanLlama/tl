@@ -37,9 +37,19 @@ namespace tl {
         template <>
         struct overloader<> {};
 
+        template <class T>
+        struct overloader<T> : T {
+            using T::operator();
+
+            template <class U>
+            overloader(U&& u)
+                : T{std::forward<U>(u)} {}
+        };
+
         template <class T, class... Ts>
         struct overloader<T, Ts...> : T, overloader<Ts...> {
             using T::operator();
+            using overloader<Ts...>::operator();
 
             template <class U, class... Us>
             overloader(U&& u, Us&&... us)
